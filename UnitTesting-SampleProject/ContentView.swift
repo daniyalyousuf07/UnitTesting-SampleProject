@@ -13,7 +13,6 @@ struct ContentView: View {
         VStack {
             if viewModel.isLoading {
                 ProgressView("Loading")
-                    .background(.ultraThinMaterial)
             } else {
                 List {
                     ForEach($viewModel.cats, id: \.id) { cat in

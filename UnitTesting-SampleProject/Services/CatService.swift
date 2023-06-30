@@ -13,7 +13,7 @@ protocol CatServiceProtocol {
     func fetchCats(requestData: NetworkServiceRequestProtocol) async  -> Result<[CatBreedModel], NetworkError>
 }
 
-class CatService: CatServiceProtocol {
+final class CatService: CatServiceProtocol {
     private(set) var networkService: NetworkServiceProtocol
     
     required init(networkService: NetworkServiceProtocol = NetworkService(urlSession: .shared,

@@ -15,7 +15,7 @@ protocol CatViewModelProtocol {
     func fetchCats(request: NetworkServiceRequestProtocol) async
 }
 
-class CatViewModel: CatViewModelProtocol {
+final class CatViewModel: CatViewModelProtocol {
     @Published var isLoading: Bool = true
     @Published var cats: [CatBreedModel] = []
     private(set) var catService: CatServiceProtocol
