@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = CatViewModel()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if viewModel.isLoading {
+                ProgressView("Loading")
+                    .background(.ultraThinMaterial)
+            } else {
+                List {
+                    ForEach($viewModel.cats, id: \.id) { cat in
+                        Text(cat.name.wrappedValue ?? "")
+                    }
+                }
+            }
+        }
+        .task {
+            await viewModel.fetchCats()
         }
         .padding()
     }
