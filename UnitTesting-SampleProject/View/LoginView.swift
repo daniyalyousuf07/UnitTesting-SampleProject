@@ -8,64 +8,77 @@
 import SwiftUI
 
 struct LoginView: View {
+    enum Field: Hashable {
+        case emailField
+        case passwordField
+    }
+    @FocusState private var focusedField: Field?
     @State private var tfEmail: String =  ""
     @State private var tfPassword: String = ""
     @State private var loginButtonEnabled: Bool = false
     @State private var presentList: Bool = false
+    @State private var presentSignupView: Bool = false
+    @State private var isFocusedEmail: Bool = false
+    @State private var isFocusedPassword: Bool = false
     var body: some View {
         NavigationView(content: {
             Form {
-                textField(title: "Email",
-                          text: $tfEmail)
-                textField(title: "Password",
-                          text: $tfPassword)
+                TextField("Email", text: $tfEmail, onEditingChanged: { isEditing in
+                    isFocusedEmail = isEditing
+                })
+                .modifier(FormTextField(isFocused: isFocusedEmail))
+                
+                TextField("Password", text: $tfPassword, onEditingChanged: { isEditing in
+                    isFocusedPassword = isEditing
+                })
+                .modifier(FormTextField(isFocused: isFocusedPassword))
+                
                 Button {
                     presentList = true
                 } label: {
                     Text("Login")
-                        .font(.system(size: 20))
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .background(loginButtonState() ? .gray.opacity(0.7) : .green)
-                        .foregroundColor(.white)
-                        .containerShape(RoundedRectangle(cornerRadius: 60))
-                    
+                        .modifier(FormTextButton(buttonDisabled: loginButtonState()))
                 }.disabled(loginButtonState())
                 
                 HStack {
                     Spacer()
                     Button {
-                        
+                        presentSignupView = true
                     } label: {
                         Text("Sign up")
                             .font(.system(size: 18))
-                            .foregroundColor(.blue)
+                            .foregroundColor(.green)
+                            .fontWeight(.bold)
                     }
                 }
-                
             }
-            .padding()
+            .padding(18)
             .formStyle(.columns)
             .navigationTitle("Sign in")
         })
         .edgesIgnoringSafeArea(.all)
         .ignoresSafeArea(.all)
         .fullScreenCover(isPresented: $presentList, content: {
-            ContentView(presentScreen: $presentList)
+            CatListView(presentScreen: $presentList)
+        })
+        .fullScreenCover(isPresented: $presentSignupView, content: {
+            SignupView(presentSignupView: $presentSignupView)
         })
     }
     
-    func loginButtonState() -> Bool {
+    private func loginButtonState() -> Bool {
         return (tfEmail.isEmpty || tfPassword.isEmpty)
     }
     
     
-    @ViewBuilder
-    private func textField(title: String,
-                   text: Binding<String>) -> some View {
-        TextField(title, text: text)
-            .modifier(FormTextField())
-    }
+//    @ViewBuilder
+//    private func textField(title: String,
+//                           text: Binding<String>) -> some View {
+//        TextField(title, text: text, onEditingChanged: { isEditing in
+//            isFocused = isEditing
+//        })
+//            .modifier(FormTextField(isFocused: isFocused))
+//    }
 }
 
 struct LoginView_Previews: PreviewProvider {
@@ -74,14 +87,3 @@ struct LoginView_Previews: PreviewProvider {
     }
 }
 
-struct FormTextField: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding(.horizontal, 20)
-            .padding(.vertical, 14)
-            .background(.gray.opacity(0.2))
-            .containerShape(RoundedRectangle(cornerRadius: 60))
-            .foregroundColor(.black)
-            .font(.system(size: 20))
-    }
-}

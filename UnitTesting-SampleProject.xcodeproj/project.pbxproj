@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70950C9F2A5F27F800F1F7F6 /* FormTextField+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70950C9E2A5F27F800F1F7F6 /* FormTextField+Modifier.swift */; };
+		70950CA12A5F289D00F1F7F6 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70950CA02A5F289D00F1F7F6 /* SignupView.swift */; };
+		70950CA32A5F2BF700F1F7F6 /* FormTextButton+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70950CA22A5F2BF700F1F7F6 /* FormTextButton+Modifier.swift */; };
 		70A670A72A57C07F001F7F06 /* CatListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A670A62A57C07F001F7F06 /* CatListCellView.swift */; };
 		70BC54622A5E5B7F001480D6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC54612A5E5B7F001480D6 /* LoginView.swift */; };
 		70C398552A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C398542A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift */; };
-		70C398572A4CB6A600E8162C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C398562A4CB6A600E8162C /* ContentView.swift */; };
+		70C398572A4CB6A600E8162C /* CatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C398562A4CB6A600E8162C /* CatListView.swift */; };
 		70C398592A4CB6A800E8162C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C398582A4CB6A800E8162C /* Assets.xcassets */; };
 		70C3985C2A4CB6A800E8162C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C3985B2A4CB6A800E8162C /* Preview Assets.xcassets */; };
 		70C398642A4CB6CC00E8162C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C398632A4CB6CC00E8162C /* NetworkService.swift */; };
@@ -40,11 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70950C9E2A5F27F800F1F7F6 /* FormTextField+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormTextField+Modifier.swift"; sourceTree = "<group>"; };
+		70950CA02A5F289D00F1F7F6 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		70950CA22A5F2BF700F1F7F6 /* FormTextButton+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormTextButton+Modifier.swift"; sourceTree = "<group>"; };
 		70A670A62A57C07F001F7F06 /* CatListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListCellView.swift; sourceTree = "<group>"; };
 		70BC54612A5E5B7F001480D6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		70C398512A4CB6A600E8162C /* UnitTesting-SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitTesting-SampleProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C398542A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTesting_SampleProjectApp.swift; sourceTree = "<group>"; };
-		70C398562A4CB6A600E8162C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		70C398562A4CB6A600E8162C /* CatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListView.swift; sourceTree = "<group>"; };
 		70C398582A4CB6A800E8162C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70C3985B2A4CB6A800E8162C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70C398632A4CB6CC00E8162C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -82,11 +88,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70950C9D2A5F27E200F1F7F6 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				70950C9E2A5F27F800F1F7F6 /* FormTextField+Modifier.swift */,
+				70950CA22A5F2BF700F1F7F6 /* FormTextButton+Modifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		70950CA42A5F305800F1F7F6 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
 		70A670A52A57C073001F7F06 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				70C398562A4CB6A600E8162C /* CatListView.swift */,
 				70A670A62A57C07F001F7F06 /* CatListCellView.swift */,
 				70BC54612A5E5B7F001480D6 /* LoginView.swift */,
+				70950CA02A5F289D00F1F7F6 /* SignupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +136,8 @@
 		70C398532A4CB6A600E8162C /* UnitTesting-SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				70950CA42A5F305800F1F7F6 /* Environment */,
+				70950C9D2A5F27E200F1F7F6 /* Modifier */,
 				70A670A52A57C073001F7F06 /* View */,
 				70C3988F2A4CF4CD00E8162C /* JSON */,
 				70C3988C2A4CF4A100E8162C /* Helpers */,
@@ -120,7 +146,6 @@
 				70C398692A4CC13400E8162C /* Services */,
 				70C398622A4CB6BB00E8162C /* Network */,
 				70C398542A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift */,
-				70C398562A4CB6A600E8162C /* ContentView.swift */,
 				70C398582A4CB6A800E8162C /* Assets.xcassets */,
 				70C3985A2A4CB6A800E8162C /* Preview Content */,
 			);
@@ -352,10 +377,13 @@
 				70C3986B2A4CC13E00E8162C /* CatService.swift in Sources */,
 				70C398712A4CEB2300E8162C /* CatViewModel.swift in Sources */,
 				70C3988E2A4CF4A800E8162C /* HelperFunctions.swift in Sources */,
-				70C398572A4CB6A600E8162C /* ContentView.swift in Sources */,
+				70C398572A4CB6A600E8162C /* CatListView.swift in Sources */,
 				70C3A6A22A4E29160094D1C0 /* NetworkProtocols.swift in Sources */,
+				70950C9F2A5F27F800F1F7F6 /* FormTextField+Modifier.swift in Sources */,
+				70950CA32A5F2BF700F1F7F6 /* FormTextButton+Modifier.swift in Sources */,
 				70C398662A4CB6DD00E8162C /* NetworkError.swift in Sources */,
 				70A670A72A57C07F001F7F06 /* CatListCellView.swift in Sources */,
+				70950CA12A5F289D00F1F7F6 /* SignupView.swift in Sources */,
 				70C398682A4CBD1500E8162C /* Service.swift in Sources */,
 				70C398642A4CB6CC00E8162C /* NetworkService.swift in Sources */,
 				70BC54622A5E5B7F001480D6 /* LoginView.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CatListView: View {
     @Binding var presentScreen: Bool
     @StateObject var viewModel = CatViewModel()
     var body: some View {
@@ -26,18 +26,17 @@ struct ContentView: View {
             .task {
                 await viewModel.fetchCats()
             }
-            .toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                       presentScreen = false
-                    } label: {
-                        Image(systemName: "chevron.backward")
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-                    }
-
-                }
-            })
+//            .toolbar(content: {
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    Button {
+//                       presentScreen = false
+//                    } label: {
+//                        Image(systemName: "chevron.backward")
+//                            .fontWeight(.bold)
+//                            .foregroundColor(.black)
+//                    }
+//                }
+//            })
             .navigationTitle("Cats")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -46,6 +45,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(presentScreen: .constant(false))
+        CatListView(presentScreen: .constant(false))
     }
 }
