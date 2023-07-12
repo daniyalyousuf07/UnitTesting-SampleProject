@@ -175,3 +175,20 @@ struct CatBreedModel : Decodable {
     }
 }
 
+//MARK :- Cat Business Model
+extension CatBreedModel {
+    
+    struct CatListCellModel {
+        var name: String
+        var url: String = "https://cdn-images.vetstreet.com/0f/0c/15556b52423f85aacd2e90e9662c/Abyssinian-AP-XHICHB-645sm3614.jpg"
+    }
+    
+    var listCellModel: CatListCellModel {
+        get {
+            return .init(name: self.name ?? "")
+        }
+        set {
+           
+        }
+    }
+}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70A670A72A57C07F001F7F06 /* CatListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A670A62A57C07F001F7F06 /* CatListCellView.swift */; };
+		70BC54622A5E5B7F001480D6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC54612A5E5B7F001480D6 /* LoginView.swift */; };
 		70C398552A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C398542A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift */; };
 		70C398572A4CB6A600E8162C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C398562A4CB6A600E8162C /* ContentView.swift */; };
 		70C398592A4CB6A800E8162C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C398582A4CB6A800E8162C /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70A670A62A57C07F001F7F06 /* CatListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListCellView.swift; sourceTree = "<group>"; };
+		70BC54612A5E5B7F001480D6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		70C398512A4CB6A600E8162C /* UnitTesting-SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitTesting-SampleProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C398542A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTesting_SampleProjectApp.swift; sourceTree = "<group>"; };
 		70C398562A4CB6A600E8162C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70A670A52A57C073001F7F06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				70A670A62A57C07F001F7F06 /* CatListCellView.swift */,
+				70BC54612A5E5B7F001480D6 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		70C398482A4CB6A600E8162C = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		70C398532A4CB6A600E8162C /* UnitTesting-SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				70A670A52A57C073001F7F06 /* View */,
 				70C3988F2A4CF4CD00E8162C /* JSON */,
 				70C3988C2A4CF4A100E8162C /* Helpers */,
 				70C3986F2A4CEB1700E8162C /* CatViewModel */,
@@ -341,8 +355,10 @@
 				70C398572A4CB6A600E8162C /* ContentView.swift in Sources */,
 				70C3A6A22A4E29160094D1C0 /* NetworkProtocols.swift in Sources */,
 				70C398662A4CB6DD00E8162C /* NetworkError.swift in Sources */,
+				70A670A72A57C07F001F7F06 /* CatListCellView.swift in Sources */,
 				70C398682A4CBD1500E8162C /* Service.swift in Sources */,
 				70C398642A4CB6CC00E8162C /* NetworkService.swift in Sources */,
+				70BC54622A5E5B7F001480D6 /* LoginView.swift in Sources */,
 				70C398552A4CB6A600E8162C /* UnitTesting_SampleProjectApp.swift in Sources */,
 				70C3986E2A4CEAAC00E8162C /* CatbreedModel.swift in Sources */,
 			);

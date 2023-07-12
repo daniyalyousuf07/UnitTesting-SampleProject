@@ -8,28 +8,44 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var presentScreen: Bool
     @StateObject var viewModel = CatViewModel()
     var body: some View {
-        VStack {
-            if viewModel.isLoading {
-                ProgressView("Loading")
-            } else {
-                List {
-                    ForEach($viewModel.cats, id: \.id) { cat in
-                        Text(cat.name.wrappedValue ?? "")
+        NavigationView {
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView("Loading")
+                } else {
+                    List {
+                        ForEach($viewModel.cats, id: \.id) { cat in
+                            CatListCellView(model: cat.listCellModel.wrappedValue)
+                        }
                     }
                 }
             }
+            .task {
+                await viewModel.fetchCats()
+            }
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                       presentScreen = false
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                    }
+
+                }
+            })
+            .navigationTitle("Cats")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .task {
-            await viewModel.fetchCats()
-        }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(presentScreen: .constant(false))
     }
 }
